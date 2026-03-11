@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FulbitoYa! — Muy pronto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #1a2e4a;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .logo {
+      height: 80px;
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(40px, 8vw, 80px);
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .badge {
+      display: inline-block;
+      background: #4caf50;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .subtitle {
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: rgba(255,255,255,0.7);
+      max-width: 420px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    .form-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      max-width: 420px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .form-row input {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: #1a2e4a;
+      outline: none;
+    }
+    .form-row button {
+      padding: 14px 24px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .form-row button:hover { background: #388e3c; }
+    .hint {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 48px;
+    }
+    .success {
+      display: none;
+      color: #4caf50;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 48px;
+    }
+    .socials {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .socials a:hover { color: white; }
+  </style>
+</head>
+<body>
+
+  <img class="logo" src="https://i.imgur.com/EZoltvk.png" alt="FulbitoYa!"
+    onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block'"/>
+  <span id="logo-text" style="display:none; font-family:'Bebas Neue',cursive; font-size:40px; letter-spacing:3px; margin-bottom:32px;">FulbitoYa!</span>
+
+  <h1>Todos los partidos<br/>empiezan acá ⚽</h1>
+
+  <div class="badge">MUY PRONTO</div>
+
+  <p class="subtitle">La plataforma de fútbol amateur de Buenos Aires. Reservá tu cancha, encontrá jugadores y jugá ya.</p>
+
+  <form class="form-row" id="form-teaser" onsubmit="submitForm(event)">
+    <input type="email" placeholder="Tu email" required />
+    <button type="submit">Avisame</button>
+  </form>
+
+  <p class="hint">Te avisamos cuando lancemos. Sin spam. ✌️</p>
+  <p class="success" id="success-msg">✅ ¡Listo! Te avisamos cuando lancemos. ¡Pronto jugás!</p>
+
+  <div class="socials">
+    <a href="https://instagram.com/fulbitoya.app" target="_blank">📸 @fulbitoya.app</a>
+    <a href="https://tiktok.com/@fulbitoya" target="_blank">🎵 @fulbitoya</a>
+    <a href="https://youtube.com/@fulbitoya" target="_blank">▶️ @fulbitoya</a>
+  </div>
+
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+      document.getElementById('form-teaser').style.display = 'none';
+      document.querySelector('.hint').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
